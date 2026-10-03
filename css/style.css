@@ -35,6 +35,9 @@ a {
     fill:currentColor;
     stroke:none
     }
+.nowrap {
+    white-space:nowrap
+    }
 .site-header {
     position:fixed;
     top:0;
@@ -48,32 +51,23 @@ a {
     height:76px;
     display:flex;
     align-items:center;
-    justify-content:space-between
+    gap:24px
     }
 .logo {
-    font-size:20px;
     display:flex;
     align-items:center;
-    gap:9px
+    flex-shrink:0
     }
-.logo span {
-    width:38px;
-    height:38px;
-    border-radius:11px;
-    background:#0b1f3a;
-    color:#fff;
-    display:grid;
-    place-items:center;
-    font-size:12px;
-    font-weight:800
-    }
-.logo b {
-    font-weight:800
+.logo img {
+    display:block;
+    height:58px;
+    width:auto
     }
 .links {
     display:flex;
     align-items:center;
     gap:22px;
+    margin-left:auto;
     font-size:13px;
     font-weight:700
     }
@@ -107,6 +101,42 @@ a {
     }
 .menu .icon {
     display:block
+    }
+.flag {
+    width:20px;
+    height:14px;
+    flex-shrink:0;
+    border-radius:3px;
+    box-shadow:0 0 0 1px #10182814
+    }
+.lang-switch {
+    display:flex;
+    flex-shrink:0;
+    gap:2px;
+    padding:3px;
+    border:1px solid #e1e5ea;
+    border-radius:999px;
+    background:#f6f7f9
+    }
+.lang-switch button {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    border:0;
+    border-radius:999px;
+    padding:6px 10px;
+    background:none;
+    color:#475467;
+    font:800 12px "DM Sans",sans-serif;
+    cursor:pointer;
+    transition:.25s
+    }
+.lang-switch button:hover {
+    color:#0b1f3a
+    }
+.lang-switch button[aria-pressed="true"] {
+    background:#0b1f3a;
+    color:#fff
     }
 .hero {
     min-height:760px;
@@ -191,7 +221,7 @@ a {
     margin-top:48px;
     font-size:13px
     }
-.trust span {
+.trust>span {
     display:flex;
     align-items:center;
     gap:8px
@@ -532,6 +562,98 @@ a {
 .warning {
     background:#fff8e8
     }
+.country-tabs {
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:26px
+    }
+.country-tabs button {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid #dce2e8;
+    border-radius:999px;
+    padding:12px 22px;
+    background:#fff;
+    color:#344054;
+    font:800 15px "DM Sans",sans-serif;
+    cursor:pointer;
+    transition:.3s
+    }
+.country-tabs button:hover {
+    border-color:#c99a38
+    }
+.country-tabs button[aria-selected="true"] {
+    background:#0b1f3a;
+    border-color:#0b1f3a;
+    color:#fff
+    }
+.country-tabs .flag {
+    width:24px;
+    height:16px
+    }
+.country-banner {
+    min-height:230px;
+    border-radius:27px;
+    margin-bottom:22px;
+    background-color:#0b1f3a;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:end;
+    color:#fff
+    }
+.country-banner:before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,#061a32e6,#061a3280 55%,#061a3215)
+    }
+.country-banner>div {
+    position:relative;
+    padding:34px
+    }
+.country-banner h3 {
+    font:700 42px/1.1 "Playfair Display",serif;
+    display:flex;
+    align-items:center;
+    gap:14px
+    }
+.country-banner .flag {
+    width:42px;
+    height:28px;
+    border-radius:5px;
+    box-shadow:0 0 0 1px #ffffff40
+    }
+.section .country-banner p {
+    color:#d7e0e9;
+    margin-top:6px
+    }
+.france-banner {
+    background-image:url("https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80")
+    }
+.turkiye-banner {
+    background-image:url("https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1600&q=80")
+    }
+.visa-pair {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px
+    }
+.visa-pair .visa-card {
+    display:flex;
+    flex-direction:column
+    }
+.visa-pair .timeline {
+    margin-bottom:32px
+    }
+.visa-cta {
+    margin-top:auto;
+    align-self:flex-start
+    }
 .uni-grid {
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -643,7 +765,7 @@ a {
     grid-template-columns:1fr 1fr;
     gap:12px
     }
-.businesspoints span {
+.businesspoints>span {
     border:1px solid #ffffff1c;
     padding:17px;
     border-radius:14px;
@@ -830,9 +952,12 @@ footer {
     }
 .footgrid {
     display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
+    grid-template-columns:1.6fr 1fr 1.3fr 1fr 1fr;
     gap:40px;
     padding-bottom:50px
+    }
+.footgrid .logo img {
+    height:84px
     }
 .footgrid h4 {
     margin-bottom:12px
@@ -919,9 +1044,14 @@ footer {
         display:flex
         }
     .menu {
-        display:block
+        display:block;
+        order:2
         }
-    .split,.visa-layout,.reverse,.businessgrid,.contactgrid {
+    .lang-switch {
+        margin-left:auto;
+        order:1
+        }
+    .split,.visa-layout,.reverse,.visa-pair,.businessgrid,.contactgrid {
         grid-template-columns:1fr
         }
     .grid3,.uni-grid {
@@ -982,6 +1112,29 @@ footer {
         }
     .visa-card h3 {
         font-size:29px
+        }
+    .nav {
+        gap:14px
+        }
+    .logo img {
+        height:50px
+        }
+    .country-tabs button {
+        padding:10px 18px
+        }
+    .country-banner {
+        min-height:190px
+        }
+    .country-banner>div {
+        padding:24px
+        }
+    .country-banner h3 {
+        font-size:32px
+        }
+    }
+@media(max-width:380px) {
+    .businesspoints {
+        grid-template-columns:1fr
         }
     }
 @media(prefers-reduced-motion:reduce) {

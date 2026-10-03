@@ -1,0 +1,275 @@
+// Translations. French is written directly in index.html and is the default language:
+// an element marked data-i18n="key" gets TRANSLATIONS.en[key] when English is selected,
+// and attributes use data-i18n-<attribute>="key" (placeholder, aria-label, content, label).
+// TRANSLATIONS.fr only holds the strings built by js/script.js, which are not in the HTML.
+const TRANSLATIONS={
+ fr:{
+  'form.saving':"Enregistrement de votre demande…",
+  'form.saved':"Votre demande a été enregistrée et préparée pour WhatsApp.",
+  'form.notSaved':"Votre demande a été préparée pour WhatsApp. Envoyez le message pour que nous la recevions.",
+  'wa.greeting':"Bonjour Scholar Link,",
+  'wa.name':"Nom",
+  'wa.phone':"Téléphone",
+  'wa.project':"Projet"
+ },
+ en:{
+  'meta.title':"Scholar Link | China & International Mobility",
+  'meta.description':"Scholar Link - Study in China, scholarships, admissions, student and business visas, student and visitor visas for France and Türkiye, tourism and support from Cameroon.",
+
+  'nav.menu':"Open menu",
+  'nav.language':"Language",
+  'nav.china':"Study in China",
+  'nav.universities':"Universities",
+  'nav.process':"Process",
+  'nav.cta':"Start my project",
+
+  'common.china':"China",
+  'common.cameroon':"Cameroon",
+  'common.talkAdvisor':"Talk to an advisor",
+  'common.travelAssistance':"Travel assistance",
+  'common.studentVisa':"Student visa",
+  'common.buildFile':"Building your file",
+  'common.visaApplication':"Visa application",
+  'common.submitApplication':"Submitting the application",
+  'common.visaWarning':"<strong>Important:</strong> Scholar Link helps with the administrative preparation, but the final decision to grant a visa rests with the relevant authorities. Documents, timelines, fees and conditions may change.",
+
+  'hero.kicker':"FROM CAMEROON · OUR PRIORITY: CHINA",
+  'hero.title':"Your future<br><em>starts in China.</em>",
+  'hero.text':"Scholar Link supports you with studies, scholarships, university admissions, student and business visas, as well as your international mobility projects.",
+  'hero.discover':"Discover our services →",
+  'hero.trustScholarships':"Partial & full scholarships",
+  'hero.trustVisas':"Student & business visas",
+
+  'stats.chinaText':"Priority destination",
+  'stats.scholarshipsText':"Partial & full",
+  'stats.universitiesText':"International programmes",
+  'stats.mobility':"Mobility",
+  'stats.mobilityText':"Tourism & business",
+
+  'china.eyebrow':"STUDY IN CHINA",
+  'china.title':"Support designed around <em>your project.</em>",
+  'china.text':"We help you understand the options available, choose a programme and prepare your application. Funding, admission and visa conditions depend on the programme, the university and your situation.",
+  'china.check1':"Fully or partially funded scholarships",
+  'china.check2':"Bachelor's, Master's, PhD and language programmes",
+  'china.check3':"University guidance and application preparation",
+  'china.check4':"X1/X2 student visa support",
+  'china.check5':"Assistance before departure and on arrival",
+  'china.link':"Understanding scholarships →",
+
+  'services.eyebrow':"OUR SERVICES",
+  'services.title':"From idea to departure.",
+  'services.text':"A team to guide you, prepare your project and support you through every key step.",
+  'services.scholarships':"Scholarships",
+  'services.scholarshipsText':"Research and guidance towards partial or full scholarship opportunities that match your profile.",
+  'services.learnMore':"Learn more →",
+  'services.admission':"University admission",
+  'services.admissionText':"Programme selection, file preparation and application support.",
+  'services.seeProcess':"See the process →",
+  'services.studentVisaText':"Help preparing and submitting an X1/X2 application after admission.",
+  'services.seeDetails':"See the details →",
+  'services.businessVisa':"M business visa",
+  'services.businessVisaText':"Support for entrepreneurs, importers and professionals travelling to China.",
+  'services.travelText':"Preparation advice, accommodation, tickets and a pre-departure briefing depending on the service chosen.",
+  'services.requestSupport':"Request support →",
+  'services.followUp':"Personal follow-up",
+  'services.followUpText':"An advisor follows your project and tells you the next steps as your file progresses.",
+  'services.talkAdvisor':"Talk to an advisor →",
+
+  'scholarships.eyebrow':"SCHOLARSHIPS IN CHINA",
+  'scholarships.title':"Partial or full: <em>understand the difference.</em>",
+  'scholarships.text':"Scholarships differ from one university or programme to another. We check the conditions of each opportunity before advising you.",
+  'scholarships.fullTitle':"Fully funded scholarship",
+  'scholarships.fullText':"Depending on the programme, coverage may include costs such as tuition, accommodation, insurance and/or a stipend. The exact items are set by the programme concerned.",
+  'scholarships.fullCta':"Assess my profile",
+  'scholarships.partialTitle':"Partially funded scholarship",
+  'scholarships.partialText':"Part of the costs may be covered, for example tuition or accommodation. Applicants must plan for the remaining expenses depending on the offer received.",
+  'scholarships.partialCta':"Find an opportunity",
+  'scholarships.note':"<strong>Keep in mind:</strong> being admitted does not automatically mean receiving a scholarship. Eligibility, funding and deadlines must be checked for each programme.",
+
+  'cnStudent.title':"X1 / X2 student visa",
+  'cnStudent.text':"Once you are admitted to a Chinese institution, we help you organise the steps needed for your student visa application. The visa type and required documents must be confirmed with the relevant authorities when you apply.",
+  'cnStudent.cardTitle':"Study scholarship in China",
+  'cnStudent.lead':"Partial scholarship (tuition or accommodation covered) or full scholarship (depending on the programme: tuition, accommodation, insurance and stipend), for a Bachelor's, Master's, PhD or a Chinese language year.",
+  'cnStudent.s1':"Profile review",
+  'cnStudent.s1Text':"Level of study, intended field, available budget and choice between a partial or full scholarship.",
+  'cnStudent.s2':"Choosing the university",
+  'cnStudent.s2Text':"Choice of the institution and programme that fit your academic plans.",
+  'cnStudent.s3Text':"Diplomas, transcripts, identity documents, translations/legalisations if needed and any other required documents.",
+  'cnStudent.s4':"Submitting the application",
+  'cnStudent.s4Text':"Submission to the university or scholarship programme concerned, following the applicable procedure.",
+  'cnStudent.s5Text':"Receiving the admission letter and the documents needed for the visa process, where required.",
+  'cnStudent.s6Text':"Preparing and submitting the student visa application to the relevant centre/authority.",
+  'cnStudent.s7':"Getting ready to leave",
+  'cnStudent.s7Text':"Flight ticket, accommodation, insurance and a pre-departure briefing as needed.",
+  'cnStudent.s8':"Support on arrival",
+  'cnStudent.s8Text':"Advice on settling in, registration and your first steps on campus.",
+  'cnStudent.journey':"Admission → Visa → Departure → Settling in",
+
+  'cnBusiness.title':"M business visa for China",
+  'cnBusiness.text':"A support service for entrepreneurs, importers, professionals and business visitors travelling to China for professional activities. The application must match the real purpose of the trip and the applicable requirements.",
+  'cnBusiness.pill':"M business visa",
+  'cnBusiness.cardTitle':"A clear path for your business trip",
+  'cnBusiness.lead':"For a partnership, factory purchasing, a trade fair, a prospecting mission, a negotiation or a business meeting.",
+  'cnBusiness.s1':"Purpose of the trip",
+  'cnBusiness.s1Text':"A precise definition of the purpose: negotiation, purchasing, trade fair, Canton Fair, contract signing, etc.",
+  'cnBusiness.s2':"Invitation letter",
+  'cnBusiness.s2Text':"Obtaining an invitation from a Chinese company or organisation when one is required.",
+  'cnBusiness.s3Text':"Passport, photos, professional documents, itinerary, hotel booking and other documents according to current requirements.",
+  'cnBusiness.s4Text':"Submitting the file to the centre or authority handling Chinese visa applications.",
+  'cnBusiness.s5':"Tracking and collection",
+  'cnBusiness.s5Text':"Tracking the processing and collecting your passport according to the applicable procedure.",
+  'cnBusiness.s6':"Preparing your stay",
+  'cnBusiness.s6Text':"Tickets, accommodation, business schedule and an on-site interpreter if needed.",
+
+  'universities.eyebrow':"CHINESE UNIVERSITIES",
+  'universities.title':"Campuses for <em>your next chapter.</em>",
+  'universities.text':"A few examples of leading universities. Programme and scholarship availability must be checked for each intake.",
+  'universities.programmes':"International programmes · subject to availability",
+  'universities.note':"*Names and images are used here for presentation. Replace the photos with your own licensed visuals and confirm programmes before publishing.",
+
+  'process.eyebrow':"HOW DOES IT WORK?",
+  'process.title':"Your project in 4 key steps.",
+  'process.s1':"Analysis",
+  'process.s1Text':"Level, field, budget and goal.",
+  'process.s2':"Research",
+  'process.s2Text':"Universities, programmes and suitable options.",
+  'process.s3':"Application",
+  'process.s3Text':"Preparing and submitting documents.",
+  'process.s4':"Visa & departure",
+  'process.s4Text':"Following up on your project and preparing the trip.",
+
+  'banner.title':"Your next business trip can start in China.",
+  'banner.text':"Importing, sourcing, trade fairs, business meetings or prospecting: prepare your trip with Scholar Link.",
+  'banner.cta':"Discover the M visa →",
+  'banner.point1':"Business visa",
+  'banner.point2':"Fairs & meetings",
+  'banner.point3':"Commercial projects",
+
+  'ft.title':"Study or travel in <em>France and Türkiye.</em>",
+  'ft.text':"Student visa or visitor visa: we help you choose the right procedure, build your file and prepare your departure.",
+  'ft.tabsLabel':"Choose a country",
+  'ft.documents':"Supporting documents",
+  'ft.cta':"Start my application →",
+  'ft.fr.tagline':"Universities, grandes écoles, tourist stays and family visits.",
+  'ft.fr.student.pill':"Long stay · VLS-TS",
+  'ft.fr.student.title':"France student visa",
+  'ft.fr.student.lead':"For a Bachelor's, Master's, PhD or French-language programme at an institution in France. From Cameroon, applications usually go through Campus France's “Études en France” procedure before the visa application.",
+  'ft.fr.student.s1':"Choosing programmes",
+  'ft.fr.student.s1Text':"Guidance, shortlisting institutions and checking requirements: diplomas, French level, budget.",
+  'ft.fr.student.s2':"Études en France procedure",
+  'ft.fr.student.s2Text':"Online file with Campus France, applications, application fee and interview.",
+  'ft.fr.student.s3':"Acceptance",
+  'ft.fr.student.s3Text':"Replies from institutions and confirmation of your final choice.",
+  'ft.fr.student.s4Text':"<span class='nowrap'>France-Visas</span> form, proof of funds and accommodation, appointment and submission at the visa centre.",
+  'ft.fr.student.s5':"Arriving in France",
+  'ft.fr.student.s5Text':"Online validation of the long-stay visa equivalent to a residence permit (VLS-TS) within 3 months of arrival, then settling in.",
+  'ft.fr.visitor.pill':"Short stay · Schengen",
+  'ft.fr.visitor.title':"France visitor visa",
+  'ft.fr.visitor.lead':"Short-stay Schengen visa for tourism or a family or private visit, for up to 90 days in any 180-day period.",
+  'ft.fr.visitor.s1':"Purpose & itinerary",
+  'ft.fr.visitor.s1Text':"Tourism, family or private visit: travel dates and plan of your stay.",
+  'ft.fr.visitor.s2Text':"Passport, accommodation or host's “attestation d'accueil”, travel insurance, proof of funds and employment status.",
+  'ft.fr.visitor.s3Text':"<span class='nowrap'>France-Visas</span> form, appointment and submission of your file, including biometrics.",
+  'ft.fr.visitor.s4':"Decision & departure",
+  'ft.fr.visitor.s4Text':"Tracking the processing, collecting your passport and preparing the trip.",
+  'ft.tr.tagline':"English- and Turkish-taught universities, scholarships, tourist stays and family visits.",
+  'ft.tr.student.pill':"Study visa",
+  'ft.tr.student.title':"Türkiye student visa",
+  'ft.tr.student.lead':"To study at a Turkish university, in English or Turkish, including through Türkiye Bursları scholarships. Your admission letter is the basis of the visa application.",
+  'ft.tr.student.s1':"Choosing a programme",
+  'ft.tr.student.s1Text':"University, field and language of instruction, with a Turkish preparatory year if needed.",
+  'ft.tr.student.s2':"Application & admission",
+  'ft.tr.student.s2Text':"Application file, any exams or interviews, then the admission letter.",
+  'ft.tr.student.s3Text':"Submitting the student visa application to the Turkish consulate or its visa centre.",
+  'ft.tr.student.s4':"Arrival & residence permit",
+  'ft.tr.student.s4Text':"University registration, then applying for the student residence permit (ikamet) within the required deadline.",
+  'ft.tr.visitor.pill':"Short stay · <span class='nowrap'>e-Visa</span> or consulate",
+  'ft.tr.visitor.title':"Türkiye visitor visa",
+  'ft.tr.visitor.lead':"For tourism, a family visit or a short stay. Depending on your nationality and situation, you apply online (<span class='nowrap'>e-Visa</span>) or through the consulate.",
+  'ft.tr.visitor.s1':"Visa type",
+  'ft.tr.visitor.s1Text':"Checking whether you qualify for an <span class='nowrap'>e-Visa</span> or need a consular visa.",
+  'ft.tr.visitor.s2Text':"Passport, hotel booking or invitation, return ticket, travel insurance and proof of funds.",
+  'ft.tr.visitor.s3Text':"Online application or submission at the visa centre, then tracking the processing.",
+  'ft.tr.visitor.s4':"Preparing the trip",
+  'ft.tr.visitor.s4Text':"Tickets, accommodation and pre-departure advice.",
+
+  'destinations.eyebrow':"OTHER DESTINATIONS",
+  'destinations.title':"China first. <em>The world too.</em>",
+  'destinations.text':"Tourism and travel services for Zanzibar, Dubai, the Seychelles, Thailand, Mauritius and Senegal.",
+  'destinations.holidays':"Tourism & holidays",
+  'destinations.stays':"Tourism & stays",
+  'destinations.relaxation':"Tourism & relaxation",
+  'destinations.discovery':"Tourism & discovery",
+  'destinations.thailand':"Thailand",
+  'destinations.mauritius':"Mauritius",
+  'destinations.senegal':"Senegal",
+
+  'testimonials.eyebrow':"TESTIMONIALS",
+  'testimonials.title':"Projects, journeys, stories.",
+  'testimonials.rating':"Rating: 5 out of 5",
+  'testimonials.quote1':"“The team helped me better understand the steps of my study project and organise my application.”",
+  'testimonials.author1':"— Student,",
+  'testimonials.quote2':"“I had lots of questions about the process. The step-by-step follow-up really reassured me.”",
+  'testimonials.author2':"— Applicant,",
+  'testimonials.quote3':"“A team that was available to guide me on my business trip to China.”",
+
+  'eligibility.eyebrow':"NOT SURE WHERE TO START?",
+  'eligibility.title':"Assess your project.",
+  'eligibility.text':"Tell us your goal and we will point you to the right service.",
+  'eligibility.cta':"Start my assessment →",
+
+  'contact.title':"Let's build your next project.",
+  'contact.text':"Studies, scholarships, admission, visas, business or tourism: send us your request.",
+  'contact.city':"Douala, Cameroon",
+
+  'form.name':"Full name",
+  'form.namePlaceholder':"Your name",
+  'form.phone':"WhatsApp / Phone",
+  'form.project':"Your project",
+  'form.chooseService':"Choose a service",
+  'form.optScholarship':"Scholarship",
+  'form.optAdmission':"Admission in China",
+  'form.other':"Other",
+  'form.optTourism':"Tourism",
+  'form.messagePlaceholder':"Briefly describe your project...",
+  'form.submit':"Send my request →",
+  'form.saving':"Saving your request…",
+  'form.saved':"Your request has been saved and prepared for WhatsApp.",
+  'form.notSaved':"Your request has been prepared for WhatsApp. Send the message so that we receive it.",
+  'wa.greeting':"Hello Scholar Link,",
+  'wa.name':"Name",
+  'wa.phone':"Phone",
+  'wa.project':"Project",
+
+  'footer.tagline':"Your gateway to China and the world.",
+  'footer.scholarships':"Scholarships",
+  'footer.appointment':"Book an appointment",
+  'footer.contactUs':"Contact us",
+  'footer.rights':"All rights reserved."
+ }
+};
+const LANGUAGES=['fr','en'];
+const LANG_STORAGE_KEY='scholarlink-lang';
+const I18N_ATTRIBUTES=['placeholder','aria-label','content','label'];
+// Keep the French originals so switching back to French needs no second copy of the page text
+const frenchText=[...document.querySelectorAll('[data-i18n]')].map(el=>[el,el.innerHTML]);
+const frenchAttributes=I18N_ATTRIBUTES.flatMap(attr=>[...document.querySelectorAll(`[data-i18n-${attr}]`)].map(el=>[el,attr,el.getAttribute(attr)]));
+let currentLang='fr';
+function t(key){return TRANSLATIONS[currentLang][key]??TRANSLATIONS.fr[key]??key}
+function setLang(lang,remember){
+ if(!LANGUAGES.includes(lang))lang='fr';
+ currentLang=lang;
+ const dict=TRANSLATIONS[lang];
+ document.documentElement.lang=lang;
+ frenchText.forEach(([el,html])=>{el.innerHTML=lang==='fr'?html:dict[el.dataset.i18n]??html});
+ frenchAttributes.forEach(([el,attr,value])=>el.setAttribute(attr,lang==='fr'?value:dict[el.getAttribute(`data-i18n-${attr}`)]??value));
+ document.querySelectorAll('.lang-switch [data-lang]').forEach(btn=>btn.setAttribute('aria-pressed',btn.dataset.lang===lang));
+ if(remember){try{localStorage.setItem(LANG_STORAGE_KEY,lang)}catch{}}
+}
+document.querySelectorAll('.lang-switch [data-lang]').forEach(btn=>btn.addEventListener('click',()=>setLang(btn.dataset.lang,true)));
+// Priority: ?lang=en in the link, then the visitor's last choice, then the browser language
+let savedLang=null;
+try{savedLang=localStorage.getItem(LANG_STORAGE_KEY)}catch{}
+const urlLang=new URLSearchParams(location.search).get('lang');
+const browserLang=(navigator.language||'').toLowerCase().startsWith('en')?'en':'fr';
+setLang(urlLang||savedLang||browserLang,false);
