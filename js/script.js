@@ -6,6 +6,30 @@ menu?.addEventListener('click',()=>{
 });
 document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 document.getElementById('year').textContent=new Date().getFullYear();
+// France / Türkiye tabs (WAI-ARIA tabs pattern: arrow keys move between countries)
+const countryTabs=[...document.querySelectorAll('.country-tabs [role="tab"]')];
+function selectCountry(tab,focus){
+  countryTabs.forEach(other=>{
+    const selected=other===tab;
+    other.setAttribute('aria-selected',selected);
+    other.tabIndex=selected?0:-1;
+    document.getElementById(other.getAttribute('aria-controls')).hidden=!selected;
+  });
+  if(focus)tab.focus();
+}
+countryTabs.forEach((tab,i)=>{
+  tab.addEventListener('click',()=>selectCountry(tab));
+  tab.addEventListener('keydown',e=>{
+    const step={ArrowRight:1,ArrowLeft:-1}[e.key];
+    if(step){e.preventDefault();selectCountry(countryTabs[(i+step+countryTabs.length)%countryTabs.length],true)}
+  });
+});
+if(countryTabs.length)selectCountry(countryTabs[0]);
+// Links such as the footer ones open the tab of the country they point to
+document.querySelectorAll('[data-country]').forEach(link=>link.addEventListener('click',()=>{
+  const tab=document.getElementById(`tab-${link.dataset.country}`);
+  if(tab)selectCountry(tab);
+}));
 // Only hide content for the reveal animation if the browser can reveal it again
 if('IntersectionObserver' in window){
   const revealElements=document.querySelectorAll('.section,.card,.scholar,.visa-card,.side-photo,.uni-grid article,.dest,.steps>div,.testgrid article,.eligibility,.business-banner');
@@ -21,21 +45,28 @@ const WHATSAPP_NUMBER='237697363210';
 const LEADS_ENDPOINT='https://formsubmit.co/ajax/scholarlinkconsulting720@gmail.com';
 const form=document.getElementById('contactForm');
 const formNote=document.getElementById('formNote');
+// "Start my application" buttons pre-select the matching service in the form
+document.querySelectorAll('[data-project]').forEach(link=>link.addEventListener('click',()=>{
+ if(form)form.elements.project.value=link.dataset.project;
+}));
 form?.addEventListener('submit',e=>{
  e.preventDefault();
  const data=new FormData(form);
  const submit=form.querySelector('[type="submit"]');
- const message=`Bonjour Scholar Link,\n\nNom: ${data.get('name')}\nTéléphone: ${data.get('phone')}\nProjet: ${data.get('project')}\nMessage: ${data.get('message')||''}`;
+ // WhatsApp gets the service name as the visitor reads it; the saved lead keeps the stable French value
+ const projectLabel=form.elements.project.selectedOptions[0].textContent;
+ const message=`${t('wa.greeting')}\n\n${t('wa.name')}: ${data.get('name')}\n${t('wa.phone')}: ${data.get('phone')}\n${t('wa.project')}: ${projectLabel}\nMessage: ${data.get('message')||''}`;
  const lead=new URLSearchParams({
   'Nom':data.get('name'),
   'WhatsApp / Téléphone':data.get('phone'),
   'Projet':data.get('project'),
   'Message':data.get('message')||'',
+  'Langue':currentLang.toUpperCase(),
   _subject:`Nouvelle demande Scholar Link : ${data.get('project')}`,
   _template:'table'
  });
  submit.disabled=true;
- formNote.textContent='Enregistrement de votre demande…';
+ formNote.textContent=t('form.saving');
  // Form-encoded body avoids a CORS preflight; keepalive lets the save finish if the page navigates to WhatsApp
  const saved=fetch(LEADS_ENDPOINT,{method:'POST',headers:{Accept:'application/json'},body:lead,keepalive:true})
   .then(res=>res.ok?res.json():Promise.reject(res))
@@ -44,8 +75,8 @@ form?.addEventListener('submit',e=>{
  const waUrl=`https://wa.me/${WHATSAPP_NUMBER}?text=`+encodeURIComponent(message);
  if(!window.open(waUrl,'_blank'))location.href=waUrl;
  saved
-  .then(()=>{formNote.textContent='Votre demande a été enregistrée et préparée pour WhatsApp.'})
-  .catch(()=>{formNote.textContent='Votre demande a été préparée pour WhatsApp. Envoyez le message pour que nous la recevions.'})
+  .then(()=>{formNote.textContent=t('form.saved')})
+  .catch(()=>{formNote.textContent=t('form.notSaved')})
   .finally(()=>{submit.disabled=false});
 });
 
